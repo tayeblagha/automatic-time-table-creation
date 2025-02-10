@@ -1,0 +1,157 @@
+<app-page-header
+  [link]="'profs'"
+  [prev]="'Teachers'"
+  [current]="'Add a new Teacher'"
+  [current]="teacher_id ? 'Update Teacher' : 'Add New Teacher'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    
+    <div class="card comman-shadow">
+      <div class="card-body">
+      
+        <form (ngSubmit)="handleAddProf()">
+          <div class="row">
+            <div class="col-12 arrowmargin">
+              <div class="page-title-container">
+               
+                <a href="/profs" class="back-arrow">
+                  <i class="fa fa-arrow-left backml"></i>
+                </a>
+                <h2 class="page-title">Information About Teacher</h2>
+              </div>
+            </div>
+
+            <!-- First Name -->
+            <div class="col-12 col-sm-3">
+              <div class="form-group local-forms">
+                <label>First Name <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="newProf.firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-12 col-sm-3">
+              <div class="form-group local-forms">
+                <label>Last Name <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="newProf.lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+
+             <!-- Other Fields -->
+             <div class="col-12 col-sm-6">
+              <div class="form-group local-forms">
+                <label>E-Mail <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  [(ngModel)]="newProf.email"
+                  name="email"
+                  placeholder="E-Mail"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Department Dropdown -->
+            <div class="col-12 col-sm-6">
+              <div class="form-group local-forms">
+                <label>Department <span class="login-danger">*</span></label>
+                <ng-multiselect-dropdown
+                  [placeholder]="'Select Departments'"
+                  [data]="departments"
+                  [(ngModel)]="selectedDepartments"
+                  [settings]="dropdownSettings"
+                  name="departments"
+                  (onSelect)="onDepartmentChange()"
+                  (onDeSelect)="onDepartmentChange()"
+                  required
+                ></ng-multiselect-dropdown>
+              </div>
+            </div>
+
+            <!-- Majors Dropdown -->
+            <div class="col-12 col-sm-6">
+              <div class="form-group local-forms">
+                <label>Majors <span class="login-danger">*</span></label>
+                <ng-multiselect-dropdown
+                [placeholder]="'Select Majors'"
+                [data]="majors"
+                [(ngModel)]="selectedMajors"
+                [settings]="majordownSettings"
+              
+                name="majors"
+                required
+              ></ng-multiselect-dropdown>
+              
+            </div>
+            </div>
+           
+
+            <div class="col-12 col-sm-6">
+              <div class="form-group local-forms">
+                <label>Username <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="newProf.login"
+                  name="login"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+            </div>
+
+            
+            <div class="col-12 col-sm-6">
+              <div class="form-group local-forms position-relative">
+                <label>Password <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  [type]="passwordFieldType"
+                  [(ngModel)]="newProf.password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+                <!-- Eye icon to toggle visibility -->
+                
+                <span
+                  class="toggle-password position-absolute eye"
+                  (click)="togglePasswordVisibility()"
+                 
+                >
+                  <i *ngIf="  passwordFieldType === 'password'  " class="fa fa-eye" aria-hidden="true" ></i>
+                  <i *ngIf="  passwordFieldType === 'text'  "  class="fa fa-eye-slash" aria-hidden="true"></i>
+
+                </span>
+              </div>
+            </div>
+            
+
+            <div class="col-12 d-flex align-items-center justify-content-center">
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

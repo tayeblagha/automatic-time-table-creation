@@ -1,0 +1,111 @@
+<app-page-header
+  [link]="'majors'"
+  [prev]="'Majors'"
+  [current]="major_id ? 'Update Major' : 'Add New Major'"
+>
+
+
+
+</app-page-header>
+
+<div class="container mt-4">
+  
+  <div class="card shadow-sm">
+    
+   
+    <div class="card-body">
+      <form (ngSubmit)="handleAddMajor()">
+        <div class="row">
+          <div class="col-12 arrowmargin">
+            <div class="page-title-container">
+             
+              <a href="/majors" class="back-arrow">
+                <i class="fa fa-arrow-left backml"></i>
+              </a>
+              <h2 class="page-title">Information About Major</h2>
+            </div>
+          </div>
+          <!-- Major Name -->
+          <div class="col-md-6 mb-3">
+            <label for="majorName" class="form-label">Name <span class="text-danger">*</span></label>
+            <input
+              id="majorName"
+              type="text"
+              class="form-control"
+              placeholder="Enter major name"
+              [(ngModel)]="newMajor.name"
+              name="name"
+            />
+          </div>
+
+          <!-- Semesters -->
+          <div class="col-md-6 mb-3">
+            <label for="multiSelectDropdown" class="form-label">Semesters <span class="text-danger">*</span></label>
+            <ng-multiselect-dropdown
+              id="multiSelectDropdown"
+              [data]="semesters || []"
+              [(ngModel)]="newMajor.semesters"
+              name="semesters"
+              [settings]="dropdownSettings"
+              placeholder="Select Semesters"
+              
+            ></ng-multiselect-dropdown>
+          </div>
+          
+          
+          <!-- Department -->
+          <div class="col-md-6 mb-3">
+            <label for="departmentSelect" class="form-label">Department <span class="text-danger">*</span></label>
+            <select
+              id="departmentSelect"
+              class="form-control"
+              [(ngModel)]="selectedDepartmentId"
+              name="department"
+            >
+              <option value="" disabled selected>Choose a department</option>
+              <option *ngFor="let dep of departments" [value]="dep.id">
+                {{ dep.label }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Label -->
+          <div class="col-md-6 mb-3">
+            <label for="majorLabel" class="form-label">Description <span class="text-danger">*</span></label>
+            <input
+              id="majorLabel"
+              type="text"
+              class="form-control"
+              placeholder="Enter label"
+              [(ngModel)]="newMajor.label"
+              name="label"
+            />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="row mt-4">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-primary px-5">Confirm</button>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- File Upload -->
+        <div class="row">
+          <div class="col">
+            <label for="fileUpload" class="form-label">Upload a list of majors (xlsx, csv, txt)</label>
+            <div class="input-group">
+              <input
+                id="fileUpload"
+                type="file"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

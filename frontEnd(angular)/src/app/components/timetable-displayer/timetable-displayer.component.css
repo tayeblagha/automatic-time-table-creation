@@ -1,0 +1,180 @@
+/* Timetable container styling */
+.timetable-displayer-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    max-width: fit-content;
+    margin: 2rem auto;
+    transition: all 0.3s ease;
+}
+
+/* Calendar icon styling */
+.timetable-displayer-container .fa-calendar {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    padding: 0.8rem;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Label styling */
+label[for="mondaySelect"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #34495e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+/* Select dropdown styling */
+#mondaySelect {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.8rem 2.5rem 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237f8c8d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+/* Button wrapper */
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Button styling */
+.button-wrapper button {
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+#mondaySelect:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+#mondaySelect:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.fa-calendar:hover {
+    transform: translateY(-2px);
+    color: #3498db;
+}
+
+label[for="mondaySelect"]:hover {
+    color: #3498db;
+}
+
+/* Table styling */
+.timetable-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    border: 3px solid #333;
+    table-layout: fixed;
+    margin: 1rem 0;
+}
+
+th, td {
+    text-align: center;
+    border: 3px solid #181717;
+    padding: 12px;
+    word-wrap: break-word;
+}
+
+.bg-gray-200 {
+    background-color: #f0f0f0;
+}
+
+.school-logo {
+    height: 60px;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 15px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+}
+
+.startDate {
+    margin-top: -1px;
+}
+
+.slotSubject {
+    font-weight: bold;
+}
+
+.teacher {
+    font-weight: lighter;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .timetable-displayer-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.2rem;
+    }
+    
+    .fa-calendar {
+        align-self: center;
+    }
+    
+    #mondaySelect {
+        width: 100%;
+    }
+    
+    .button-wrapper {
+        flex-direction: column;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+.mleft{
+    margin-left: 23px;
+}
+.themleft{
+    margin-left: 31px; 
+}

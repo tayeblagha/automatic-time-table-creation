@@ -1,0 +1,137 @@
+<div *ngIf="admin">
+  <app-page-header
+    [link]="'timetable'"
+    [prev]="'Timetable'"
+    [current]="'Home'"
+  ></app-page-header>
+</div>
+<meta charset="utf-8" />
+<div class="card report-card">
+  <div class="card-body pb-0">
+    <div class="form-row row align-items-center">
+      <div class="col">
+        <div class="form-group">
+          <label for="field-select" class="d-flex align-items-center">
+            <i class="fa fa-clipboard me-2"></i> 
+            <span>Department</span> 
+            <div  class="text-danger ms-2">*</div>
+          </label>
+          <select
+            id="department-select"
+            class="form-select custom-select"
+            [(ngModel)]="department_id"
+            required
+          >
+            <option *ngIf="!department_id" selected disabled>Select Department</option>
+            <option *ngFor="let dep of departments" [value]="dep.id">{{ dep.name }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="field-select" class="d-flex align-items-center">
+            <i class="fa fa-clipboard me-2"></i> 
+            <span>Grade</span> 
+            <div  class="text-danger ms-2">*</div>
+          </label>
+          
+          <select
+            id="field-select"
+            class="form-select custom-select"
+            [(ngModel)]="grade_id"
+            required
+          >
+            <option selected disabled>Select Grade</option>
+            <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+          </select>
+          
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="field-select" class="d-flex align-items-center">
+            <i class="fa fa-clipboard me-2"></i> 
+            <span>Semester</span> 
+            <div  class="text-danger ms-2">*</div>
+          </label>
+          <select
+            id="semester-select"
+            class="form-select custom-select"
+            [(ngModel)]="semester_id"
+            required
+          >
+            <option selected disabled>Select Semester</option>
+            <option *ngFor="let sem of semesters" [value]="sem.id">{{ sem.number }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-auto text-end float-end ms-auto download-grp pb-2">
+        <button
+          class="btn btn-outline-primary me-2"
+          (click)="generate()"
+          [disabled]="!grade_id || !department_id || !semester_id"
+        >
+          Generate <i class="fas fa-calendar"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="is_generated">
+  <div class="timetable-container my-6">
+    <div *ngFor="let timetable of timetables; let i = index">
+      <div class="page-title d-flex align-items-center">
+        <img [src]="schoolGeneralInfo?.imageUrl" alt="Logo" class="school-logo me-2 " />
+        <h2 class="m-0">{{ timetable.classEntity.label }}</h2>
+      </div>
+      <div class="date-container text-center">
+        <h6 class="startDate">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          From {{ timetable.startDate | date: 'dd/MM/yyyy' }}
+          To {{ calculateEndDate(timetable.startDate) | date: 'dd/MM/yyyy' }}
+        </h6>
+      </div>
+
+      <table id="timetable-{{ i }}" class="">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="px-4 py-2 border border-gray-300">Day</th>
+            <th *ngFor="let timeSlot of timeSlots">
+              {{ timeSlot }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let day of timetable.data">
+            <td class="px-4 py-2 border border-gray-300">{{ day.day }}</td>
+            <td
+              *ngFor="let slot of day.slots"
+              [attr.colspan]="slot.span"
+              [hidden]="slot.span === 0"
+            >
+            <p class="slotSubject">  {{ slot.name }} 
+              <br *ngIf="slot.room">
+            <small *ngIf="slot.room" > {{ slot.room.typeRoom }}-{{ slot.room.numRoom }} </small> 
+              
+            <small *ngIf="slot.teacher" class="teacher">({{ slot.teacher.name }})  </small> 
+             
+            </p>
+             
+              <!-- I want to shoow teacher Name right there  -->
+               
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+    <div class="student-submit my-1">
+      <button (click)="downloadPDF()" class="btn btn-primary">
+        Download <i class="fa-solid fa-file-pdf"></i>
+      </button>
+    </div>
+  </div>
+</div>

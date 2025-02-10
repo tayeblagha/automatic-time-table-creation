@@ -1,0 +1,168 @@
+<div class="row">
+  <div class="col-xl-6 d-flex">
+    <div class="card flex-fill comman-shadow">
+      <div class="card flex-fill student-space comman-shadow">
+        <div class="card-header d-flex align-items-center">
+          <h5 class="card-title">Task shortcuts</h5>
+        </div>
+        <div class="card-body">
+          <section>
+            <div class="container justify-content-between">
+              <button
+                *ngIf="!spinnerImport"
+                type="button"
+                onclick="document.getElementById('getFile').click()"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-file-import"></i><br />
+                Importing data from an Excel file.
+                <input
+                  type="file"
+                  (change)="handleImport($event)"
+                  accept=".xlsx, .xls"
+                  class="form-control"
+                  id="getFile"
+                  style="display: none"
+                />
+              </button>
+              <button
+                *ngIf="spinnerImport"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                *ngIf="!spinnerGenerate"
+                (click)="handleGenerate()"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-random"></i><br />
+                Generating schedules
+              </button>
+              <button
+                *ngIf="spinnerGenerate"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+
+              <button
+                *ngIf="!spinnerExport"
+                (click)="handleExport()"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <i class="fas fa-file-export"></i><br />
+                Exporting schedules to PDF.
+              </button>
+              <button
+                *ngIf="spinnerExport"
+                type="button"
+                class="btn btn-primary btn-square-md"
+              >
+                <div class="text-center">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-6 d-flex">
+    <div class="card flex-fill comman-shadow">
+      <div class="card flex-fill student-space comman-shadow">
+        <div class="card-header d-flex align-items-center">
+          <h5 class="card-title">Status of Tasks and Activities</h5>
+        </div>
+        <div class="card-body">
+          <div class="activity-groups">
+            <div class="activity-awards">
+              <!-- <div class="award-boxs">
+                <img
+                  width="25"
+                  height="25"
+                  [src]="
+                    importStatus
+                      ? '/assets/img/icons/done.png'
+                      : '/assets/img/icons/notDone.png'
+                  "
+                  alt="Award"
+                />
+              </div>
+              <div class="award-list-outs">
+                <h4>Importing data</h4>
+              </div>
+            </div> -->
+            <div class="award-boxs">
+              <img
+                width="25"
+                height="25"
+                [src]="
+                  importStatus
+                    ? '/assets/img/icons/done.png'
+                    : '/assets/img/icons/done.png'
+                "
+                alt="Award"
+              />
+            </div>
+            <div class="award-list-outs">
+              <h4>Importing data</h4>
+            </div>
+          </div>
+
+            <!-- <div class="activity-awards">
+              <div class="award-boxs">
+                <img
+                  width="25"
+                  height="25"
+                  [src]="
+                    generateStatus
+                      ? '/assets/img/icons/done.png'
+                      : '/assets/img/icons/notDone.png'
+                  "
+                  alt="Award"
+                />
+              </div>
+              <div class="award-list-outs">
+                <h4>Generating schedules</h4>
+              </div>
+            </div> -->
+            <div class="activity-awards">
+              <div class="award-boxs">
+                <img
+                  width="25"
+                  height="25"
+                  [src]="
+                    generateStatus
+                      ? '/assets/img/icons/done.png'
+                      : '/assets/img/icons/done.png'
+                  "
+                  alt="Award"
+                />
+              </div>
+              <div class="award-list-outs">
+                <h4>Generating schedules</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

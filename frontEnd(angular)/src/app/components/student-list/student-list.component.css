@@ -1,0 +1,68 @@
+.student-list-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .no-students {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+  }
+  
+  .student-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    cursor: pointer; /* Added this line */
+  }
+  
+  .student-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .student-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .student-info {
+    color: #555;
+  }
+  
+  .student-name {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .first-name {
+    color: #4CAF50;
+  }
+  
+  .last-name {
+    color: #2196F3;
+  }
+  
+  .student-email {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  

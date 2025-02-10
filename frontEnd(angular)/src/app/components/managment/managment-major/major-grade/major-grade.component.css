@@ -1,0 +1,81 @@
+/* General page styles */
+.page-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 0.5rem;
+    width: 20%;
+  }
+  
+  /* Card container grid */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Card styles */
+  .card {
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .card-body {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Card title and subtitle */
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  /* Edit icon styles */
+  .edit-icon {
+    z-index: 10; /* Adjust as needed */
+
+    cursor: pointer; /* Make the cursor appear as a hand (pointer) */
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: #007bff;
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  .edit-icon:hover {
+    color: #0056b3; /* Change the icon color when hovering */
+  }
+
+  .bold-underline {
+    font-weight: bold;       /* Makes the text bold */
+    text-decoration: underline; /* Underlines the text */
+  }
+  .ml{
+    margin-left: 0.5rem;
+  }
+
+  .pml{
+    margin-left: 0.2rem;
+  }
+  
+  .backml{
+    margin-right: 15px;
+  }

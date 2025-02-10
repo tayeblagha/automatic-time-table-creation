@@ -1,0 +1,78 @@
+<app-page-header
+  [link]="'majors'"
+  [prev]="'majors'"
+  [current]="'Add a major '"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form [formGroup]="editMajorFormGroup" (submit)="handleUpdateMajor()">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Information about Major<span
+              ><a href="javascript:"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Label <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="label"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Semester <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="numOfSem"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label
+                >Chef Major<span class="login-danger">*</span></label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="chefMajor"
+                />
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label
+                  >Department<span class="login-danger">*</span></label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    formControlName="department"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-12 d-flex align-items-center justify-content-center"
+            >
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

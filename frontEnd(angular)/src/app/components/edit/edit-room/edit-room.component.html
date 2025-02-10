@@ -1,0 +1,67 @@
+<app-page-header
+  [link]="'rooms'"
+  [prev]="'Rooms'"
+  [current]="'Edit a rooms'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form [formGroup]="editRoomFormGroup" (ngSubmit)="handleUpdateRoom()">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Information About Room<span
+                  ><a href="javascript:;"
+                    ><i class="feather-more-vertical"></i></a
+                ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Number <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  formControlName="numRoom"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>capacity <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  formControlName="capacity"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>type <span class="login-danger">*</span></label>
+
+                <select class="form-control select" formControlName="typeRoom">
+                  <option value="Amphitheater">Amphitheater</option>
+                  <option value="ComputerLab">Computer Lab</option>
+                  <option value="ElectricityLab">Electricity Lab</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Nano">Nano</option>
+                </select>
+              </div>
+            </div>
+
+            <div
+              class="col-12 d-flex align-items-center justify-content-center"
+            >
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

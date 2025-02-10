@@ -1,0 +1,70 @@
+<app-page-header
+  [link]="'notAvaliables'"
+  [prev]="'NotAvaliables'"
+  [current]="'Add new Avaliablity'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form
+          [formGroup]="newNotAvaliableFormGroup"
+          (ngSubmit)="handleAddNotAvaliable()"
+        >
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Information about Avaliablity<span
+                  ><a href="javascript:;"
+                    ><i class="feather-more-vertical"></i></a
+                ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Day <span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="day">
+                    <option value="MONDAY">Monday</option>
+                    <option value="TUESDAY">Tuesday</option>
+                    <option value="WEDNESDAY">Wednesday</option>
+                    <option value="THURSAY">Thursday</option>
+                    <option value="FRIDAY">Friday</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label
+                  >Teacher <span class="login-danger">*</span></label
+                >
+                <p class="form-control"> {{prof.firstName}} {{prof.lastName}}</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label
+                    >Period<span class="login-danger">*</span></label>
+                    <select class="form-control" formControlName="period">
+                        <option value="P0">08:30-10:00</option>
+                        <option value="P1">10:00-12:00</option>
+                        <option value="P2">13:00-15:00</option>
+                        <option value="P3">15:00-17:00</option>
+                        <option value="P4">17:00-19:00</option>
+                      </select>
+                </div>
+              </div>
+            <div
+              class="col-12 d-flex align-items-center justify-content-center"
+            >
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

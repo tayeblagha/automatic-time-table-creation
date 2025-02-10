@@ -1,0 +1,28 @@
+.badge {
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .btn-sm {
+    padding: 5px 10px;
+  }
+  
+  .plus-icon{
+    height: 40px;  margin-left: 10px; margin-bottom: 5px;
+  }
+
+  .remove-icon{
+     margin-left: 10px; 
+    
+    margin-top: 5px;
+    height: 30;
+  }
+
+  .img_minimized{
+    width: 4%;
+    height:4%;
+  
+  }
+  .mlback{
+    margin-right: 15px;
+  }

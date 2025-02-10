@@ -1,0 +1,90 @@
+<app-page-header
+  [link]="'majors'"
+  [prev]="'Majors'"
+  [current]="'Major Grades and Durations'"
+>
+
+</app-page-header>
+
+<div class="container">
+  
+    <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+      
+      
+      <!-- Display Existing Grade/Duration Pairs as Labels -->
+      <div class="mt-4">
+        <div class="d-flex align-items-center">
+          <h2 class="page-title"><a href="/majors">
+            <i class="fa fa-arrow-left mlback"></i> 
+          </a> </h2>
+          <h2 >{{ major_name+"'"}}    </h2>
+          <h5>
+            Grades <i class="fa-solid fa-address-card"></i> & Durations <i class="fa-solid fa-clock"></i> :
+          </h5>
+          <button
+            type="button"
+            class="btn btn-primary ml-3 plus-icon"
+            (click)="addGradeDuration()"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+  
+        <ul class="list-group">
+          <li
+            *ngFor="let item of existingGradeDurations"
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            Grade: {{ item.grade }}, Duration: {{ item.durationPerWeek }} hours/week
+            <button type="button" class="btn btn-sm" (click)="deleteGrade(item.grade)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Display Input Fields for Adding Grade/Duration Pair -->
+      <div *ngIf="isAddingGrade" formArrayName="gradeDurations" class="mt-4">
+        <div
+          *ngFor="let gradeDuration of gradeDurations.controls; let i = index"
+          [formGroupName]="i"
+          class="card mb-3 p-3 shadow-sm"
+        >
+          <div class="d-flex align-items-center">
+            <div class="form-group mr-3">
+              <label for="grade-{{ i }}">Grade</label>
+              <input
+                id="grade-{{ i }}"
+                type="number"
+                formControlName="grade"
+                class="form-control"
+                placeholder="Grade (1-5)"
+              />
+            </div>
+            <div class="form-group mr-3">
+              <label for="durationPerWeek-{{ i }}">Duration (hours/week)</label>
+              <input
+                id="durationPerWeek-{{ i }}"
+                type="number"
+                formControlName="durationPerWeek"
+                class="form-control"
+                placeholder="Duration"
+              />
+            </div>
+            <button type="submit" class="btn btn-success btn-sm remove-icon" [disabled]="subjectForm.invalid">
+              <i class="fa-solid fa-square-check"></i>
+            </button>
+  
+            <button type="button" class="btn btn-danger btn-sm remove-icon" (click)="removeGradeDuration(i)">
+              <i class="fas fa-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary" (click)="updateGadeDuration()" >Confirm</button>
+      </div>
+      
+    </form>
+  </div>
+  

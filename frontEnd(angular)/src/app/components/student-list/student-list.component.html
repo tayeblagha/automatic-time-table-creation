@@ -1,0 +1,29 @@
+<div class="student-list-container">
+
+    <div class="d-flex align-items-center justify-content-cente">
+        <h2 class="page-title backml"><a href="/classes">
+          <i class="fa fa-arrow-left"></i> 
+        </a> </h2>
+        <h2 class="page-title  ">    
+           &nbsp; {{current_classe?.label}} ({{students.length}} Students) &nbsp;</h2>
+      </div>
+   
+    <div *ngIf="students.length === 0" class="no-students">
+      No students found in this class.
+    </div>
+    <ul class="student-list"  >
+        <li *ngFor="let student of students; let i = index" class="student-item"  (click)="studentDetails(student.id)"
+            >
+          <div class="student-info">
+            <p class="student-name">
+              <span>{{ i + 1 }}. {{ student.firstName }}</span>
+              <span>{{ student.lastName }}</span>
+            </p>
+            <p class="student-email">  <i class="fa fa-envelope" aria-hidden="true"></i>
+                 Email: {{ student.email }}</p>
+          </div>
+        </li>
+      </ul>
+      
+  </div>
+  

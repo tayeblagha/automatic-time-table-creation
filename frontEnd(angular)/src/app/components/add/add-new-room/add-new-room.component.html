@@ -1,0 +1,83 @@
+<app-page-header
+  [link]="'rooms'"
+  [prev]="'Rooms'"
+  [current]="room_id ? 'Update Room' : 'Add New Room'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+    
+      <div class="card-body">
+        <form #newRoomForm="ngForm" (ngSubmit)="handleAddRoom(newRoomForm)">
+          <div class="row">
+            <div class="col-12">
+              
+              <div class="page-title-container">
+                <a href="/classrooms" class="back-arrow">
+                  <i class="fa fa-arrow-left backml"></i>
+                </a>
+                <h2 class="page-title">Information About Room</h2>
+              </div>
+              <h5 class="form-title student-info">
+                <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Number <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  name="numRoom"
+                  [(ngModel)]="roomData.numRoom"
+                  required
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Capacity <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  name="capacity"
+                  [(ngModel)]="roomData.capacity"
+                  required
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Type <span class="login-danger">*</span></label>
+                <select
+                  class="form-control"
+                  name="typeRoom"
+                  [(ngModel)]="roomData.typeRoom"
+                  required
+                >
+                <option value="Room">Room</option>
+                  <option value="Amphi">Amphitheater</option>
+                  <option value="ComputerLab">Computer Lab</option>
+                  <option value="ElectricityLab">Electricity Lab</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Nano">Nano</option>
+                </select>
+              </div>
+            </div>
+
+            <div
+              class="col-12 d-flex align-items-center justify-content-center"
+            >
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary" [disabled]="!newRoomForm.valid">
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div *ngIf="admin">
+  <app-page-header
+    [link]="'timetable'"
+    [prev]="'Timetable'"
+    [current]="'Home'"
+  ></app-page-header>
+</div>
+<meta charset="utf-8" />
+
+<div class="card report-card">
+  <div class="card-body pb-0">
+    <div class="form-row row align-items-center">
+      <div class="col">
+        <div class="form-group">
+          <label for="department-select">
+            <i class="fa fa-building"></i> Departments
+          </label>
+          <select id="department-select" class="form-select custom-select">
+            <option selected disabled>Select...</option>
+            <option value="1">Department 1</option>
+         
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="field-select">
+            <i class="fa fa-clipboard"></i> Grade
+          </label>
+          <select id="field-select" class="form-select custom-select">
+            <option selected disabled>Select...</option>
+            <option value="1">Grade 1</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="semester-select">
+            <i class="fa fa-clock"></i> Semester
+          </label>
+          <select id="semester-select" class="form-select custom-select">
+            <option selected disabled>Select...</option>
+            <option value="1">Semester 1</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-auto text-end float-end ms-auto download-grp pb-2">
+        <a class="btn btn-outline-primary me-2">
+          
+        Generate <i class="fas fa-calendar"></i> 
+        </a>
+       
+      </div>
+    </div>
+  </div>
+</div>

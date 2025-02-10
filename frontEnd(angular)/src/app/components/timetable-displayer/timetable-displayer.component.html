@@ -1,0 +1,73 @@
+<div class="timetable-displayer-container">
+    <i class="fa fa-calendar" aria-hidden="true"></i>
+    
+    <div class="selector-wrapper">
+        <label for="mondaySelect">Select Week` Schedule: &nbsp;</label>
+        <select id="mondaySelect" [(ngModel)]="selectedMonday" (ngModelChange)="generate()">
+            <option *ngFor="let date of mondays; let i = index" [value]="date">
+                <ng-container *ngIf="i === 0">Current week</ng-container>
+                <ng-container *ngIf="i === 1">Next week</ng-container>
+                <ng-container *ngIf="i !== 0 && i !== 1">{{ date }}</ng-container>
+            </option>
+        </select>
+    </div>
+    
+    
+    <div class="button-wrapper">
+        <button class="btn btn-primary mleft" *ngIf="timetables.length>0" (click)="handleRegenrate()"> 
+             Regenerate TimeTable <i class="fas fa-random"></i>
+        </button>
+        <button class="btn btn-primary themleft" *ngIf="timetables.length==0" (click)="handlegenrate()"> 
+             Generate TimeTable <i class="fas fa-random"></i>
+        </button>
+    </div>
+</div>
+
+<div>
+    <div class="timetable-container my-6">
+        <div *ngFor="let timetable of timetables; let i = index">
+            <div class="page-title d-flex align-items-center">
+                <h2 class="m-0">{{ timetable.classEntity.label }}</h2>
+            </div>
+            <div class="date-container text-center">
+                <h6 class="startDate">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    From {{ timetable.startDate | date: 'dd/MM/yyyy' }}
+                    To {{ calculateEndDate(timetable.startDate) | date: 'dd/MM/yyyy' }}
+                </h6>
+            </div>
+    
+            <table id="timetable-{{ i }}" class="">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2 border border-gray-300">Day</th>
+                        <th *ngFor="let timeSlot of timeSlots">
+                            {{ timeSlot }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let day of timetable.data">
+                        <td class="px-4 py-2 border border-gray-300">{{ day.day }}</td>
+                        <td
+                            *ngFor="let slot of day.slots"
+                            [attr.colspan]="slot.span"
+                            [hidden]="slot.span === 0"
+                        >
+                            <p class="slotSubject">  
+                                {{ slot.name }} 
+                                <br *ngIf="slot.room">
+                                <small *ngIf="slot.room" > 
+                                    {{ slot.room.typeRoom }}-{{ slot.room.numRoom }} 
+                                </small> 
+                                <small *ngIf="slot.teacher" class="teacher">
+                                    ({{ slot.teacher.name }})  
+                                </small> 
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

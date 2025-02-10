@@ -1,0 +1,62 @@
+.timetable-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the table horizontally */
+}
+
+table {
+  width: 100%; /* Ensure all tables take the full width of the container */
+  max-width: 1200px; /* Add a max-width for consistent sizing */
+  border-collapse: collapse; /* Remove spacing between table cells */
+  border: 3px solid #333; /* Thicker border for uniformity */
+  table-layout: fixed; /* Ensure cells are evenly distributed */
+}
+
+th, td {
+  text-align: center; /* Center-align text */
+  border: 3px solid #181717; /* Thicker border for table cells */
+  padding: 12px; /* Increase padding for better spacing */
+  word-wrap: break-word; /* Handle overflow text */
+}
+
+tr {
+  height: auto; /* Allow rows to adjust to content */
+}
+
+.timetable-container h2 {
+  width: 100%; /* Ensure the title aligns with the table width */
+  text-align: center;
+}
+
+.bg-gray-200 {
+  background-color: #f0f0f0;
+}
+
+button {
+  margin: 5px;
+}
+
+
+.school-logo {
+  height: 60px; /* Adjust height as needed */
+  margin-left: 10px; /* Add spacing between text and logo */
+  vertical-align: middle; /* Align the logo with the text */
+  margin-top: 15px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+}
+
+.startDate{
+  margin-top: -25px;
+}
+
+.slotSubject{
+  font-weight: bold;
+}
+.teacher{
+  font-weight: lighter;
+}

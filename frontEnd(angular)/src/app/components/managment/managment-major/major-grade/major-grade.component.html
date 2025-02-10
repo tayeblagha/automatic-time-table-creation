@@ -1,0 +1,71 @@
+
+<app-page-header
+  [link]="'Classes'"
+  [prev]="'Classes'"
+  [current]="'Class Majors and Professors'"
+/>
+
+<div class="d-flex align-items-center">
+
+  <h2 class="page-title"><a href="/classes">
+    <i class="fa fa-arrow-left backml"></i> 
+   
+  </a> </h2>
+  <h3 class="page-title">
+    Majors <i class="fa-solid fa-clipboard"></i>
+  </h3>
+</div>
+
+
+
+
+<div class="dropdown-container">
+  <ng-multiselect-dropdown
+    [placeholder]="'Select Semester'"
+    [data]="semesterOptions"
+    [(ngModel)]="selectedSemesters"
+    [settings]="dropdownSettings"
+    (onSelect)="onSemesterSelect($event)"
+    (onDeSelect)="onSemesterDeselect($event)"
+    (onSelectAll)="onSelectAll($event)"
+    (onDeSelectAll)="onDeselectAll($event)">
+  </ng-multiselect-dropdown>
+</div>
+
+<div class="card-container">
+  <div class="card" *ngFor="let major of filteredMajors">
+    <button class="edit-icon" (click)="showTeacherList(major.id)"> 
+      <i class="fas fa-edit"></i> 
+    </button>
+    
+    <div class="card-body">
+      <h5 class="card-title">{{ major.name }}</h5>
+      <h6 class="card-subtitle">{{ major.label }}</h6>
+      <p class="card-text">{{ major.gradeDurations[0].durationPerWeek }} h/week</p>
+      <h5 class="card-text pro-text">
+        <img width="30" height="30" src="/assets/img/icons/teacher.png" alt="Dashboard Icon" /> :
+        <span class="bold-underline">{{ getProfessor(major.id) }}</span>
+      </h5>
+      <div *ngIf="major.id==selected_major">
+        <form (ngSubmit)="handleAddTeacher()">
+
+          <select  class="form-control" name="teacher" [(ngModel)]="selected_teacher" >
+            <option value="" disabled > Choose a Teacher</option>
+            <option *ngFor="let prof of availableTeacher" [value]="prof.id"> {{prof.firstName}}</option>
+          </select>
+          <button type="submit" class="btn btn-success btn-sm remove-icon ml" >
+            <i class="fa-solid fa-square-check"></i>
+          </button>
+  
+          <button type="submit" class="btn btn-danger btn-sm remove-icon pml" (click)="closeSelectDrop()">
+            <i class="fas fa-remove"></i>
+          </button>
+        </form>
+      
+      </div>
+      
+      
+
+    </div>
+  </div>
+</div>

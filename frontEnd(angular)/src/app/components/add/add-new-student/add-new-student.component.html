@@ -1,0 +1,182 @@
+<app-page-header
+  [link]="'students'"
+  [prev]="'Students'"
+  [current]="'Add a new Students'"
+  [current]="student_id ? 'Update Teacher' : 'Add New Student'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    
+    <div class="card comman-shadow">
+      <div class="card-body">
+        
+        <form (ngSubmit)="handleAddStudent()">
+          <div class="row">
+            <div class="col-12">
+              
+              <div class="page-title-container">
+                <a href="/students" class="back-arrow">
+                  <i class="fa fa-arrow-left backml"></i>
+                </a>
+                <h2 class="page-title">Information About Student</h2>
+              </div>
+              <h5 class="form-title student-info">
+                <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span>
+              </h5>
+            </div>
+            
+
+            <!-- First Name -->
+            <div class="col-12 col-sm-3">
+              <div class="form-group local-forms">
+                <label>First Name <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="newStudent.firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-12 col-sm-3">
+              <div class="form-group local-forms">
+                <label>Last Name <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="newStudent.lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+
+             <!-- Other Fields -->
+             <div class="col-12 col-sm-6">
+              <div class="form-group local-forms">
+                <label>E-Mail <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  [(ngModel)]="newStudent.email"
+                  name="email"
+                  placeholder="E-Mail"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4" style="margin-bottom: 15px;">
+                <div class="form-group local-forms">
+                  <label>Grade <span class="login-danger">*</span></label>
+                  <select
+                    class="form-control"
+                    [(ngModel)]="grade"
+                    name="grade"
+                    required
+                    (change)="gradeChange()"
+
+                  >
+                    <option value="" disabled selected>Select a grade</option>
+                    <option *ngFor="let grade of [1, 2, 3, 4, 5]" [value]="grade">{{ grade }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                  <label>Username <span class="login-danger">*</span></label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="newStudent.login"
+                    name="login"
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+              </div>
+  
+              
+              <div class="col-12 col-sm-4">
+                <div class="form-group local-forms position-relative">
+                  <label>Password <span class="login-danger">*</span></label>
+                  <input
+                    class="form-control"
+                    [type]="passwordFieldType"
+                    [(ngModel)]="newStudent.password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                  />
+                  <!-- Eye icon to toggle visibility -->
+                  
+                  <span
+                    class="toggle-password position-absolute eye"
+                    (click)="togglePasswordVisibility()"
+                   
+                  >
+                    <i *ngIf="  passwordFieldType === 'password'  " class="fa fa-eye" aria-hidden="true" ></i>
+                    <i *ngIf="  passwordFieldType === 'text'  "  class="fa fa-eye-slash" aria-hidden="true"></i>
+  
+                  </span>
+                </div>
+              </div>
+
+            <!-- Department Dropdown -->
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Department <span class="login-danger">*</span></label>
+                <ng-multiselect-dropdown
+                  [placeholder]="'Select Departments'"
+                  [data]="departments"
+                  [(ngModel)]="selectedDepartment"
+                  [settings]="dropdownSettings"
+                  name="departments"
+                  (onSelect)="onDepartmentChange()"
+                  (onDeSelect)="onDepartmentunselect()"
+                  required
+                ></ng-multiselect-dropdown>
+              </div>
+            </div>
+
+
+                <!-- Department Dropdown -->
+                <div class="col-12 col-sm-4" *ngIf="grade && selectedDepartment.length>0">
+                  <div class="form-group local-forms">
+                    <label>Class <span class="login-danger">*</span></label>
+                    <ng-multiselect-dropdown
+                      [placeholder]="'Select a Class'"
+                      [data]="classes"
+                      [(ngModel)]="selectedClass"
+                      [settings]="dropdownSettings"
+                      name="classes"
+                      required
+                    ></ng-multiselect-dropdown>
+                  </div>
+                </div>
+
+          
+
+        
+           
+
+            
+            
+
+            <div class="col-12 d-flex align-items-center justify-content-center">
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

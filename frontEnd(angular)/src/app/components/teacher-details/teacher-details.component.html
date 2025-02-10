@@ -1,0 +1,201 @@
+<app-page-header 
+  [link]="'students'"
+  [prev]="'Students'"
+  [current]="'Details'"
+/>
+
+<div class="container">
+    <div class="main-body">
+    
+      <div class="page-title-container">
+        <a href="/teachers" class="back-arrow">
+          <i class="fa fa-arrow-left backml"></i>
+        </a>
+        <h2 class="page-title">Teachers Details</h2>
+      </div>
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="/assets/img/ProfilePictures/default.jpg" alt="Admin" class="rounded-circle" width="150">
+                    
+                    <div class="mt-3">
+                      <h4>{{ newTeacher?.firstName}}  {{ newTeacher?.lastName}} </h4>
+                      <div class="row" >
+                        <div class="col-sm-12">
+                          <a  class="btn btn-info " target="__blank" href="/teachers/edit/{{teacher_id}}">Edit</a>
+                        </div>
+                      </div>
+                      <!-- <button class="btn btn-primary">Follow</button>
+                      <button class="btn btn-outline-primary">Message</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><i class="fa fa-id-badge" aria-hidden="true"></i> Full Name
+                        
+
+                      </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ newTeacher?.firstName}}  {{ newTeacher?.lastName}} 
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><i class="fa-solid fa-envelope"></i> Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     {{ newTeacher?.email}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div *ngIf="newTeacher?.departments" class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><i class="fa-solid fa-sitemap"></i> Department</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <ng-container *ngFor="let dep of newTeacher?.departments; let last = last">
+                        <span>{{ dep.name }}</span>
+                        <span *ngIf="!last">&nbsp;|&nbsp;</span>
+                      </ng-container>
+                    </div>
+                  </div>
+                  <hr class="themargintop">
+                  <div *ngIf="newTeacher?.reservedHours" class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">  <i class="fa-solid fa-hourglass-start"></i>Reserved Hours  </h6>
+                     
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+
+                      <ng-container *ngFor="let dep of newTeacher?.departments; let last = last">
+                        <span>{{ newTeacher?.reservedHours }}</span>
+                        <span *ngIf="!last">&nbsp;|&nbsp;</span>
+                      </ng-container>
+                      
+                    </div>
+                  </div>
+
+                  <hr class="themargintop">
+                  <div *ngIf="newTeacher?.majors" class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><i class="fa-solid fa-book"></i> Majors</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <ng-container *ngFor="let major of newTeacher?.majors; let last = last">
+                        <span>{{ major.name }}</span><span *ngIf="!last">&nbsp;|&nbsp;</span>
+                      </ng-container>
+                    </div>
+                  </div>
+                  
+                <hr  *ngIf="daytimedto?.major">
+                  <div class="row" *ngIf="daytimedto?.major">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0"><i class="fas fa-calendar-alt "></i> Current Session:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <span class="subject">
+                        <i class="fa-solid fa-book-open"></i> {{ daytimedto?.major?.name }}
+                      </span>
+                      <br/>
+                      <span class="time">
+                        <i class="fas fa-clock"></i> {{ daytimedto?.startTime }} - {{ daytimedto?.endTime }}
+                      </span>
+                      <br>
+                      <span class="room">
+                        <i class="fa-solid fa-location-dot"></i> {{ daytimedto?.room?.typeRoom }} - {{ daytimedto?.room?.numRoom }}
+                      </span> (
+                      <span class="teacher">
+                        <i class="fa-solid fa-person-chalkboard"></i> {{ daytimedto?.classes?.name }}
+                      </span> )
+                       
+                      
+                    </div>
+                  </div>
+                  
+                  
+
+                
+                  
+
+               
+
+                 
+                 
+                  
+                </div>
+
+              
+              </div>
+
+           
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div  *ngIf="timetable" class="date-container text-center">
+        <h6 class="startDate">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          From {{ timetable.startDate | date: 'dd/MM/yyyy' }}
+          To {{ calculateEndDate(timetable.startDate) | date: 'dd/MM/yyyy' }}
+        </h6>
+      </div>
+
+
+    <div *ngIf="timetable" class="timetable-container">
+        <!-- <h2>
+         
+          <small>{{ timetable.startDate }}</small>
+        </h2> -->
+        
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th *ngFor="let slot of timeSlots">{{ slot.label }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let day of processTimetable(timetable)">
+              <td>{{ day.name }}</td>
+              <td *ngFor="let slot of day.slots" [colSpan]="slot.colspan">
+                <div *ngIf="slot.session" class="session-entry">
+                  <div class="class-info">
+                    <span class="subject">{{ slot.session.major.name }} </span> &nbsp;
+                    (<span class="room">Amph-{{ slot.session.room.numRoom }}</span>)
+                  </div>
+                  <div class="class-details">
+                    {{ slot.session.classes.name }}
+                  </div>
+                </div>
+                <div *ngIf="slot.label === '12-14 (Break)'" class="break-cell">
+                  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+     

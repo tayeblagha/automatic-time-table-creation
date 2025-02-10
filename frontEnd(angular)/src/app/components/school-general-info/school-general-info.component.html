@@ -1,0 +1,90 @@
+<div *ngIf="!isEditing">
+    <h3 class="school-info-header">
+        {{ schoolGeneralInfo?.name || "" }} 
+        <i class="fa-solid fa-pencil cursor-pointer " (click)="handleUpdate()">
+           
+        </i>
+    </h3>
+    <div class="school-info" >
+        <div class="academic-year">
+            <label for="year" class="label">Academic Year:</label>
+            <span id="year">
+                {{schoolGeneralInfo ? schoolGeneralInfo.academicYear.startYear + "/" + schoolGeneralInfo.academicYear.endYear : ""}} 
+    
+    
+            </span>
+        </div>
+        <div class="semesters">
+            <label for="semesters" class="label">Number of Semesters:</label>
+            <span id="semesters">
+                {{schoolGeneralInfo ?   schoolGeneralInfo.numberSemesters : "" }}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="semester-container" *ngIf="!isEditing">
+  <div *ngFor="let semester of semesters; let i = index" (ngSubmit)="updateSemester(i)">
+    <div class="semester-form">
+      <label for="number-{{i}}">{{semester.number}}</label>
+
+      <label for="startDate-{{i}}">Start Date:</label>
+      <input
+        id="startDate-{{i}}"
+        type="date"
+        [(ngModel)]="semester.startDate"
+        name="startDate-{{i}}"
+        required
+      />
+
+      <label for="endDate-{{i}}">End Date:</label>
+      <input
+        id="endDate-{{i}}"
+        type="date"
+        [(ngModel)]="semester.endDate"
+        name="endDate-{{i}}"
+        required
+      />
+
+      <!-- Font Awesome Check Icon -->
+      <i class="fas fa-check icon btn btn-primary"  (click)="updateSemester(semester)" ></i>
+
+     
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isEditing && schoolGeneralInfo">
+    <h3 class="page-title" >School Infromation</h3>
+    <form (ngSubmit)="updateSchoolGeneralInfo()" >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input  type="text" class="w-full input" id="name" name="name" placeholder="Enter  name" [(ngModel)]="schoolGeneralInfo.name " />
+        </div> 
+
+         
+
+        <div class="form-group">
+          <label for="name">ImageUrl</label>
+          <input  spellcheck="false" 
+          autocomplete="off"  type="text" class="w-full input" id="imageUrl" name="imageUrl" placeholder="Enter  imageUrl" [(ngModel)]="schoolGeneralInfo.imageUrl " />
+        </div> 
+
+        <div class="form-group">
+            <label for="year-selector">Current Year:</label>
+            <select id="year-selector" name="selector" [(ngModel)]="current_year" >
+              <option *ngFor="let range of yearRanges" [value]="range">
+                {{ range }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Number of Semesters</label>
+            <input type="number" min="1" max="4" class="w-full input" id="semesters" name="semesters" placeholder="Enter number of semesters" [(ngModel)]="schoolGeneralInfo.numberSemesters " />
+          </div> 
+          
+
+        <button type="submit" class="btn btn-primary"> Update</button>
+    </form>
+</div>
