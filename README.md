@@ -4,8 +4,10 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 
 
 ![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/0.png?raw=true)
-#Spring boot: Java JDK 17
-#Angular: CLI: 18.2.12Node: 22.11.0 Package Manager: npm 10.9.0 
+
+
+**Spring boot**: Java JDK 17
+**Angular**: CLI: 18.2.12Node: 22.11.0 Package Manager: npm 10.9.0 
 
 ## Key Features
 
