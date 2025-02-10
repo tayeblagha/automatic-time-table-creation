@@ -7,13 +7,46 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 
 
 **Spring boot**: Java JDK 17
+
+
 **Angular**: CLI: 18.2.12Node: 22.11.0 Package Manager: npm 10.9.0 
 
 ## Key Features
 
 1. **Automatic Scheduling**: The application automatically creates weekly timetables for classes, reducing the manual effort involved in planning schedules.
+![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/1.png?raw=true)
 
-2. **Teacher and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
+2. **Majors, Classes, Teachers, Students and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
+**Majors**
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 48%;">
+</div>
+
+**Classes**
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 48%;">
+</div>
+
+**Teachers**
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 48%;">
+</div>
+
+**Students**
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 48%;">
+</div>
+
+
+**Rooms**
+![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/12.png?raw=true)
+
 3. **Subject Allocation**: Each subject is allocated based on predefined session requirements, allowing for an efficient distribution of teaching hours.
 4. **User-Friendly Interface**: Built with Angular, the platform provides an intuitive interface that makes it easy for administrators and staff to generate and view schedules.
 5. **Historical Data and Updates**: Users can manage and update existing timetables, ensuring that adjustments can be made whenever necessary.
@@ -38,7 +71,7 @@ O(C \log C + C(T + S + R))
 If teachers (\(T\)), subjects (\(S\)), and rooms (\(R\)) grow with classes (\(C\)), then:
 
 \[
-O(C^2)
+**O(C^2)**
 \]
 
 ### Space Complexity
@@ -57,7 +90,7 @@ O(C + T + R)
 If teachers, subjects, and rooms scale with classes:
 
 \[
-O(C)
+**O(C)**
 \]
 
 Note: The time and space complexity analysis assumes that the number of days and hours are constant (<10), as specified in the problem statement.
