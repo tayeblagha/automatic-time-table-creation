@@ -1,10 +1,15 @@
 # Summary of the Automatic Timetable Creation Application
 
 The Automatic Timetable Creation application is a user-friendly platform designed to simplify the process of scheduling classes in educational institutions. Developed with Spring Boot and Angular, the application leverages advanced algorithms to automatically generate weekly timetables for various classes, optimizing the allocation of teachers, classrooms, and subjects while considering their availability.
+Spring boot: Java JDK 17
+Angular: CLI: 18.2.12Node: 22.11.0 Package Manager: npm 10.9.0
+
+![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/0.png?raw=true)
 
 ## Key Features
 
 1. **Automatic Scheduling**: The application automatically creates weekly timetables for classes, reducing the manual effort involved in planning schedules.
+
 2. **Teacher and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
 3. **Subject Allocation**: Each subject is allocated based on predefined session requirements, allowing for an efficient distribution of teaching hours.
 4. **User-Friendly Interface**: Built with Angular, the platform provides an intuitive interface that makes it easy for administrators and staff to generate and view schedules.
