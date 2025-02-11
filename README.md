@@ -16,31 +16,32 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 1. **Automatic Scheduling**: The application automatically creates weekly timetables for classes, reducing the manual effort involved in planning schedules.
 ![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/1.png?raw=true)
 
-2. **Majors, Classes, Teachers, Students and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
-**Majors**
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 48%;">
-</div>
+2. **Majors, Classes, Teachers, Students, and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
 
-**Classes**
+### Majors
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 48%;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
 </div>
 
-**Teachers**
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 48%;">
+### Classes
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
 </div>
 
-**Students**
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 48%;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 48%;">
+### Teachers
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+</div>
+
+### Students
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
 </div>
 
 
