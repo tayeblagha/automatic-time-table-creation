@@ -17,13 +17,7 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 ![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/1.png?raw=true)
 
 2. **Majors, Classes, Teachers, Students, and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
-<style>
-  img {
-    width: 200px; /* Set your preferred width */
-    height: 200px; /* Set your preferred height */
-    object-fit: cover; /* Ensures images maintain aspect ratio while filling the box */
-  }
-</style>
+
 
 ### Majors
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
