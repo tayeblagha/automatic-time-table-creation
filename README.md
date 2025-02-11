@@ -29,7 +29,7 @@ The Automatic Timetable Creation application is a user-friendly platform designe
   <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
   <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
   <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 48%; height: auto;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
 </div>
 
 ### Teachers
