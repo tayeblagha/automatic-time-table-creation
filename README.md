@@ -17,31 +17,37 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 ![Timetable Example](https://github.com/tayeblagha/public-Images/blob/main/1.png?raw=true)
 
 2. **Majors, Classes, Teachers, Students, and Classroom Management**: It takes into account the availability of teachers and classrooms, ensuring that no conflicting schedules arise by checking against their busy times.
+<style>
+  img {
+    width: 200px; /* Set your preferred width */
+    height: 200px; /* Set your preferred height */
+    object-fit: cover; /* Ensures images maintain aspect ratio while filling the box */
+  }
+</style>
 
 ### Majors
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" >
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true">
 </div>
 
 ### Classes
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" >
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" >
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" >
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true">
 </div>
 
 ### Teachers
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" >
 </div>
 
 ### Students
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 150 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" >
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" >
 </div>
 
 
