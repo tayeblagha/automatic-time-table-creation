@@ -20,28 +20,28 @@ The Automatic Timetable Creation application is a user-friendly platform designe
 
 ### Majors
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/2.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/3.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
 </div>
 
 ### Classes
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/4.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/5.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/6.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/7.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
 </div>
 
 ### Teachers
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/8.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/9.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
 </div>
 
 ### Students
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
-  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 480 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/10.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
+  <img src="https://github.com/tayeblagha/public-Images/blob/main/11.png?raw=true" alt="Timetable Example" style="width: 300 px; height: 240px;">
 </div>
 
 
